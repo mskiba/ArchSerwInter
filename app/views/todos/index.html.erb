@@ -1,0 +1,31 @@
+<% title "All todos" %>
+
+<% @todos.each do |todo| %>
+<article class="index">
+  <div class="attribute">
+    <span class="name">Tytul</span>
+    <span class="value"><%= todo.tytul %></span>
+  </div>
+  <div class="attribute">
+    <span class="name">Opis</span>
+    <span class="value"><%= todo.opis %></span>
+  </div>
+  <div class="attribute">
+    <span class="name">Deadline</span>
+    <span class="value"><%= todo.deadline %></span>
+  </div>
+  <div class="attribute">
+    <span class="name">Priorytet</span>
+    <span class="value"><%= todo.priorytet %></span>
+  </div>
+<div class="form-actions">
+  <%= link_to 'Show', todo, class: 'btn btn-mini'%>
+  <%= link_to 'Edit', edit_todo_path(todo), class: 'btn btn-mini'%>
+  <%= link_to 'Destroy', todo, confirm: 'Are you sure?', method: :delete, class: 'btn btn-mini btn-danger'%>
+</div>
+</article>
+<% end %>
+
+<div class="form-actions">
+  <%= link_to 'New Todo', new_todo_path, class: 'btn btn-primary'%>
+</div>

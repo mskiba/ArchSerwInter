@@ -42,3 +42,4 @@ gem "less-rails-bootstrap"
 gem "simple_form"
 gem "wirble", :group => :development
 gem "hirb", :group => :development
+gem "therubyracer"
