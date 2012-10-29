@@ -18,13 +18,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-
-  # https://github.com/seyhunak/twitter-bootstrap-rails
-  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 end
-
-# https://github.com/plataformatec/simple_form
-gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 
 gem 'jquery-rails'
 
@@ -42,3 +36,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "less-rails", :group => :development
+gem "less-rails-bootstrap"
+gem "simple_form"
+gem "wirble", :group => :development
+gem "hirb", :group => :development

@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-ArchSerwInter::Application.config.secret_token = 'b0d658c16b37bab60f95827d352a6c7f49cc6a30737656e391b36259266411efcd37d26ec2f1505d3f3f1ae1d91a0252d92c753a86ad4cab59096c22bd0bc8b1'
+ArchSerwInter::Application.config.secret_token = 'e39c9e9f4f0280ab1c5d3839fe28d88bbf1ebb8c1bada7374c1b77cc559db742f19240fec5c70e839d6ba7414ab36d666bf462893f325efe4c22d1a0e5f98d66'
