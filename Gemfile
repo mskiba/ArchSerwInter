@@ -7,6 +7,8 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+gem 'mongoid'
+
 # paperclip dla załączników
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
@@ -38,6 +40,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# autoryzacja przez githuba
+gem "omniauth-github"
 
 gem "less-rails", :group => :development
 gem "less-rails-bootstrap"
