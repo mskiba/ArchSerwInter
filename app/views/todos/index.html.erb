@@ -1,23 +1,35 @@
 <article class="index">
 	<table class="table">
-		<caption><% title "All todos" %></caption>
+		<caption><% title "Wszystkie zadania" %></caption>
 		<thead><tr>
 			<th>Tytuł:</th>
 			<th>Deadline:</th>
 			<th>Operacje</th>
 		</tr></thead>
 		<tbody>
-		<% @todos.each do |todo| %>
-			<tr>
+			<% @todos.each do |todo| %>
+				<% za_ile_deadline = todo.deadline - DateTime.now %>
+				<% ile_dni = za_ile_deadline.to_i/(60*60*24) %>
+
+				<%# w zależności od ilości dni ile zostało do deadlinu, taki kolor pozycji %>
+
+				<% if ile_dni.between?(0, 5) %>
+					<tr class="error">
+				<% elsif ile_dni > 5 %>
+					<tr class="warning">
+				<% elsif ile_dni < 0 %>
+					<tr class="info">
+				<% end %>
+			
 				<td><%= todo.tytul %></td>
 				<td><%= todo.deadline %></td>
 				<td>
-					 <%= link_to 'Szczegoły', todo, class: 'btn btn-mini'%>
-					 <%= link_to 'Edycja', edit_todo_path(todo), class: 'btn btn-mini'%>
-					 <%= link_to 'Skasuj', todo, confirm: 'Jesteś pewien?', method: :delete, class: 'btn btn-mini btn-danger'%>
+				 	<%= link_to 'Szczegoły', todo, class: 'btn btn-mini'%>
+				 	<%= link_to 'Edycja', edit_todo_path(todo), class: 'btn btn-mini'%>
+				 	<%= link_to 'Skasuj', todo, confirm: 'Jesteś pewien?', method: :delete, class: 'btn btn-mini btn-danger'%>
 				</td>
 			</tr>
-		<% end %>
+			<% end %>
 		</tbody>
 	</table>
 <%# todo.opis %>
