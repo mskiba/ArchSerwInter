@@ -29,11 +29,11 @@
       <%= render :partial => 'common/flashes' %>
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
-      <footer>
-        <%= render :partial => 'common/footer' %>
-      </footer>
     </div>
 
+    <div id="footer">
+   		<%= render :partial => 'common/footer' %>
+    </div>
   </body>
 </html>
 
