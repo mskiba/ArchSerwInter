@@ -13,7 +13,19 @@
   </thead>
   <tbody>
     <% @todos.each do |todo| %>
-      <tr>
+		<% za_ile_deadline = todo.deadline - DateTime.now %>
+		<% ile_dni = za_ile_deadline.to_i/(60*60*24) %>
+
+		<%# w zależności od ilości dni ile zostało do deadlinu, taki kolor pozycji %>
+
+		<% if ile_dni.between?(0, 5) %>
+			<tr class="error">
+		<% elsif ile_dni > 5 %>
+			<tr class="warning">
+		<% elsif ile_dni < 0 %>
+			<tr class="info">
+		<% end %>
+		
         <td><%= link_to todo.id, todo_path(todo) %></td>
         <td><%= todo.tytul %></td>
         <td><%= todo.opis %></td>
