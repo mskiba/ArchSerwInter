@@ -5,9 +5,16 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# polskie znaki
+gem 'string_case_pl'
+
 gem 'sqlite3'
 
 gem 'mongoid'
+
+gem 'therubyracer'
+gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # paperclip dla załączników
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
