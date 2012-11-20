@@ -1,33 +1,11 @@
-<%= form_for(@todo) do |f| %>
-  <% if @todo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
-
-      <ul>
-      <% @todo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :tytul %><br />
-    <%= f.text_field :tytul %>
-  </div>
-  <div class="field">
-    <%= f.label :opis %><br />
-    <%= f.text_area :opis %>
-  </div>
-  <div class="field">
-    <%= f.label :deadline %><br />
-    <%= f.datetime_select :deadline %>
-  </div>
-  <div class="field">
-    <%= f.label :priorytet %><br />
-    <%= f.number_field :priorytet %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+<%= simple_form_for @todo, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :tytul %>
+  <%= f.input :opis %>
+  <%= f.input :deadline %>
+  <%= f.input :priorytet %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                todos_path, :class => 'btn' %>
   </div>
 <% end %>

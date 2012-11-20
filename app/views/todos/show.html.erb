@@ -1,25 +1,27 @@
-<% title "Show todo" %>
-
-<article class="show">
-  <div class="attribute">
-    <span class="name">Tytul</span>
-    <span class="value"><%= @todo.tytul %></span>
-  </div>
-  <div class="attribute">
-    <span class="name">Opis</span>
-    <span class="value"><%= @todo.opis %></span>
-  </div>
-  <div class="attribute">
-    <span class="name">Deadline</span>
-    <span class="value"><%= @todo.deadline %></span>
-  </div>
-  <div class="attribute">
-    <span class="name">Priorytet</span>
-    <span class="value"><%= @todo.priorytet %></span>
-  </div>
-<div class="form-actions">
-  <%= link_to 'Back', todos_path, class: 'btn'%>
-  <%= link_to 'Edit', edit_todo_path(@todo), class: 'btn' %>
-  <%= link_to 'Destroy', @todo, confirm: 'Are you sure?', method: :delete, class: 'btn btn-danger'%>
+<%- model_class = Todo -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
-</article>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:tytul) %>:</strong></dt>
+  <dd><%= @todo.tytul %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:opis) %>:</strong></dt>
+  <dd><%= @todo.opis %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:deadline) %>:</strong></dt>
+  <dd><%= @todo.deadline %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:priorytet) %>:</strong></dt>
+  <dd><%= @todo.priorytet %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              todos_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_todo_path(@todo), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              todo_path(@todo),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

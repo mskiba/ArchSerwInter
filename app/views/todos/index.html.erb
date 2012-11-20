@@ -1,40 +1,39 @@
-<article class="index">
-	<table class="table">
-		<caption><% title "Wszystkie zadania" %></caption>
-		<thead><tr>
-			<th>Tytuł:</th>
-			<th>Deadline:</th>
-			<th>Operacje</th>
-		</tr></thead>
-		<tbody>
-			<% @todos.each do |todo| %>
-				<% za_ile_deadline = todo.deadline - DateTime.now %>
-				<% ile_dni = za_ile_deadline.to_i/(60*60*24) %>
+<%- model_class = Todo -%>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:tytul) %></th>
+      <th><%= model_class.human_attribute_name(:opis) %></th>
+      <th><%= model_class.human_attribute_name(:deadline) %></th>
+      <th><%= model_class.human_attribute_name(:priorytet) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td><%= link_to todo.id, todo_path(todo) %></td>
+        <td><%= todo.tytul %></td>
+        <td><%= todo.opis %></td>
+        <td><%= todo.deadline %></td>
+        <td><%= todo.priorytet %></td>
+        <td><%=l todo.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_todo_path(todo), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      todo_path(todo),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-				<%# w zależności od ilości dni ile zostało do deadlinu, taki kolor pozycji %>
-
-				<% if ile_dni.between?(0, 5) %>
-					<tr class="error">
-				<% elsif ile_dni > 5 %>
-					<tr class="warning">
-				<% elsif ile_dni < 0 %>
-					<tr class="info">
-				<% end %>
-			
-				<td><%= todo.tytul %></td>
-				<td><%= todo.deadline %></td>
-				<td>
-				 	<%= link_to 'Szczegoły', todo, class: 'btn btn-mini'%>
-				 	<%= link_to 'Edycja', edit_todo_path(todo), class: 'btn btn-mini'%>
-				 	<%= link_to 'Skasuj', todo, confirm: 'Jesteś pewien?', method: :delete, class: 'btn btn-mini btn-danger'%>
-				</td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
-<%# todo.opis %>
-</article>
-
-<div class="form-actions">
-  <%= link_to 'New Todo', new_todo_path, class: 'btn btn-primary'%>
-</div>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_todo_path,
+            :class => 'btn btn-primary' %>
