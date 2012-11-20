@@ -1,5 +1,41 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  todos:
+    show:
+      opis: "Description"
+      priorytet: "Priority"
+      deadline: "Deadline"
+    index:
+      actions: "Actions"
+      tytul: "Subject"
+      id: "ID"
+      opis: "Description"
+      deadline: "Deadline"
+      priorytet: "Priority"
+      created_at: "Added"
+      manage: "Manage"
+  common:
+    menu:
+      header: "Todo"
+      homepage: "Home page"
+      contact: "Contact"
+  layouts:
+    application:
+      header: "Todo"
+  helpers:
+    titles:
+      new: "Add new %{model}"
+      edit: "Edit %{model}"
+    select:
+      prompt: "Please wait"
+    submit:
+      create: "Add %{model}"
+      submit: "Save %{model}"
+      update: "Update %{model}"
+    links:
+      confirm: "Are you sure?"
+      back: "Back"
+      edit: "Edit"
+      destroy: "Destroy"
+      cancel: "Cancel"
+      new: "New"
+      show: "Show"

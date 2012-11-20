@@ -1,8 +1,8 @@
 <%= simple_form_for @todo, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :tytul %>
-  <%= f.input :opis %>
-  <%= f.input :deadline %>
-  <%= f.input :priorytet %>
+  <%= f.input :tytul, :label => t('tytul') %>
+  <%= f.input :opis, :label => t('opis') %>
+  <%= f.input :deadline, :label => t('deadline') %>
+  <%= f.input :priorytet, :label => t('priorytet'), :collection => -2..2 %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

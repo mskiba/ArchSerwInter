@@ -1,4 +1,44 @@
 pl:
+  todos:
+    show:
+      opis: "Opis"
+      priorytet: "Priorytet"
+      deadline: "Deadline"
+    index:
+      actions: "Akcje"
+      tytul: "Tytuł"
+      opis: "Opis"
+      id: "lp."
+      deadline: "Deadline"
+      priorytet: "Priorytet"
+      created_at: "Dodany"
+      manage: "Zarządzaj"
+  common:
+    menu:
+      header: "Lista rzeczy do zrobienia"
+      homepage: "Strona główna"
+      contact: "Kontakt"
+  layouts:
+    application:
+      header: "Lista rzeczy do zrobienia"
+  helpers:
+    titles:
+      new: "Dodaj nowe %{model}"
+      edit: "Edycja %{model}"
+    select:
+      prompt: "Proszę wybrać"
+    submit:
+      create: "Utwórz %{model}"
+      submit: "Zapisz %{model}"
+      update: "Aktualizuj %{model}"
+    links:
+      confirm: "Jesteś pewien?"
+      back: "Cofnij"
+      edit: "Edycja"
+      destroy: "Skasuj"
+      cancel: "Anuluj"
+      new: "Nowy"
+      show: "Szczegóły"
   date:
     abbr_day_names:
     - nie
@@ -147,13 +187,6 @@ pl:
         one: ! '%{model} nie został zachowany z powodu jednego błędu'
         few: ! '%{model} nie został zachowany z powodu %{count} błędów'
         other: ! '%{model} nie został zachowany z powodu %{count} błędów'
-  helpers:
-    select:
-      prompt: Proszę wybrać
-    submit:
-      create: Utwórz %{model}
-      submit: Zapisz %{model}
-      update: Aktualizuj %{model}
   number:
     currency:
       format:

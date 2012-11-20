@@ -1,1 +1,1 @@
-Mongoid.add_language("pl")
+#Mongoid.add_language("pl")
