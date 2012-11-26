@@ -1,12 +1,11 @@
 <%- model_class = Todo -%>
-<table class="table table-striped">
+<table class="table table-striped index">
   <thead>
     <tr>
       <th><%= t ".id" %></th>
       <th><%= t '.tytul' %></th>
       <th><%= t '.opis' %></th>
       <th><%= t '.deadline' %></th>
-      <th><%= t '.priorytet' %></th>
       <th><%= t '.created_at' %></th>
       <th><%= t '.actions' %></th>
     </tr>
@@ -17,7 +16,6 @@
 		<% ile_dni = za_ile_deadline.to_i/(60*60*24) %>
 
 		<%# w zależności od ilości dni ile zostało do deadlinu, taki kolor pozycji %>
-
 		<% if ile_dni.between?(0, 5) %>
 			<tr class="error">
 		<% elsif ile_dni > 5 %>
@@ -29,10 +27,9 @@
         <td><%= link_to todo.id, todo_path(todo) %></td>
         <td><%= todo.tytul %></td>
         <td><%= todo.opis %></td>
-        <td><%= todo.deadline %></td>
-        <td><%= todo.priorytet %></td>
-        <td><%=l todo.created_at %></td>
-        <td NOWRAP="NOWRAP">                   
+        <td><%= ile_dni %> dni</td>
+        <td class="nowrap"><%= todo.created_at.strftime('%m/%d/%Y %H:%M') %></td>
+		<td class="nowrap">                   
 		<div class="btn-group">
 			<a class="btn btn-primary" href="#"> <%= t '.manage' %></a>
 			<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
