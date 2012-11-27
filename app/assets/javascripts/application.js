@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui.min
 //= require twitter/bootstrap
-
+//= require jquery-ui-sliderAccess
+//= require jquery-ui-timepicker-addon
+//
 $(document).ready(function() { });

@@ -1,7 +1,15 @@
 <%= simple_form_for @todo, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :tytul, :label => t('tytul') %>
-  <%= f.input :opis, :label => t('opis') %>
-  <%= f.input :deadline, :label => t('deadline') %>
+  <%= f.input :tytul, :label => t('tytul'), :input_html => { :class => 'input-xxlarge' }  %>
+  <%= f.input :opis, :label => t('opis'), :input_html => { :rows => '8', :class => 'input-xxlarge' } %>
+  <div class="control-group text optional">
+    <label class="text optional control-label" for="todo_deadline"><%= t('deadline') %></label>
+    <div class="controls">
+      <div class="input-append">
+        <input class="span2" id="datetimepicker" type="text">
+		<span class="add-on"><i class="icon-calendar"></i></span>
+      </div>
+    </div>
+  </div>  
   <%= f.input :priorytet, :label => t('priorytet'), :collection => -2..2 %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
