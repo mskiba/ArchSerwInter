@@ -2,7 +2,15 @@
 
 <script type="text/javascript">
 	$(function(){
-		$('#datetimepicker').datetimepicker();
+		$('#datetimepicker').datetimepicker({
+			timeOnlyTitle: '<%= t('timepicker.timeOnlyTitle') %>',
+			timeText: '<%= t('timepicker.timeText') %>',
+			hourText: '<%= t('timepicker.hourText') %>',
+			minuteText: '<%= t('timepicker.minuteText') %>',
+			secondText: '<%= t('timepicker.secondText') %>',
+			currentText: '<%= t('timepicker.currentText') %>',
+			closeText: '<%= t('timepicker.closeText') %>'
+		});
 	});
 </script>
 

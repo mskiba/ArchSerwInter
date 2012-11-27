@@ -1,4 +1,17 @@
 en:
+  timepicker:
+    timeOnlyTitle: 'Choose Time'
+    timeText: 'Time'
+    hourText: 'Hour'
+    minuteText: 'Minute'
+    secondText: 'Second'
+    millisecText: 'Millisecond'
+    timezoneText: 'Time Zone'
+    currentText: 'Now'
+    closeText: 'Done'
+    timeFormat: 'HH:mm'
+    amNames: 'AM'
+    pmNames: 'PM'
   todos:
     show:
       opis: "Description"
