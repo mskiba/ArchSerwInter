@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <% @todos.each do |todo| %>
-		<% za_ile_deadline = todo.deadline - DateTime.now %>
+		<% za_ile_deadline = todo.deadline-DateTime.now %>
 		<% ile_dni = za_ile_deadline.to_i/(60*60*24) %>
 
 		<%# w zależności od ilości dni ile zostało do deadlinu, taki kolor pozycji %>
@@ -28,7 +28,7 @@
         <td><%= todo.tytul %></td>
         <td><%= todo.opis %></td>
         <td><%= ile_dni %> dni</td>
-        <td class="nowrap"><%= todo.created_at.strftime('%m/%d/%Y %H:%M') %></td>
+        <td class="nowrap"><%= todo.created_at.strftime('%d/%m/%Y %H:%M') %></td>
 		<td class="nowrap">                   
 		<div class="btn-group">
 			<a class="btn btn-primary" href="#"> <%= t '.manage' %></a>

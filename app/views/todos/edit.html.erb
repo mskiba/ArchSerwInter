@@ -9,7 +9,11 @@
 			minuteText: '<%= t('timepicker.minuteText') %>',
 			secondText: '<%= t('timepicker.secondText') %>',
 			currentText: '<%= t('timepicker.currentText') %>',
-			closeText: '<%= t('timepicker.closeText') %>'
+			closeText: '<%= t('timepicker.closeText') %>',
+			
+			dateFormat: 'dd/mm/yy',
+			timeFormat: 'HH:mm',
+			defaultValue: '<%= @todo.created_at.strftime('%d/%m/%Y %H:%M') %>'
 		});
 	});
 </script>
