@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  load_and_authorize_resource
   # GET /todos
   # GET /todos.json
   def index

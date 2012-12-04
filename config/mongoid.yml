@@ -80,11 +80,11 @@ test:
         retry_interval: 0
 
 production:
-  host: <%= ENV['MONGOID_HOST'] %>
-  port: <%= ENV['MONGOID_PORT'] %>
+  host: arch_serw_inter_production
+  port: 27017
   # username: <%= ENV['MONGOID_USERNAME'] %>
   # password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: <%= ENV['MONGOID_DATABASE'] %>
+  database: arch_serw_inter_production
   # slaves:
   #   - host: slave1.local
   #     port: 27018

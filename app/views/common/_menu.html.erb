@@ -7,6 +7,18 @@
 <div class="nav-collapse collapse">
   <ul class="nav">
 	  <li class="active"><%= link_to t('.homepage'), '/todos' %></li>
-	  <li><%= link_to t('.contact'), '#' %></li>
+	  <li><%= link_to "Użytkownicy", users_index_path %></li>
   </ul>
+<ul class="nav pull-right">
+<% if current_user %>
+	<li><form style="margin:0" action="/signout" class="pull-right">
+		<button class="btn" type="submit">Wyloguj <%= current_user.nickname %></button>
+	</form></li>
+<% else %>
+	<li><form style="margin:0" action="/signin" class="pull-right">
+		<button class="btn" type="submit">Zaloguj się przez GitHub</button>
+	</form></li>
+<% end %>
+</ul>
 </div>
+

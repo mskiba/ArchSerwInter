@@ -49,7 +49,11 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 # autoryzacja przez githuba
+gem 'omniauth'
 gem "omniauth-github"
+
+# Autoryzacja
+gem 'cancan'
 
 gem "less-rails", :group => :development
 gem "less-rails-bootstrap"

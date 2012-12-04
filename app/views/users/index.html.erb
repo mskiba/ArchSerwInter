@@ -1,0 +1,22 @@
+<h1>GitHub Users</h1>
+
+<table class="table">
+              <thead>
+                <tr>
+                  <th>UID</th>
+                  <th>Imię</th>
+                  <th>E-mail</th>
+                  <th>URL</th>
+                </tr>
+              </thead>
+              <tbody>
+<% @users.each do |student| %>
+                <tr>
+                  <td><%= student.uid %>1</td>
+                  <td><%= student.name %></td>
+                  <td><%= student.email %></td>
+                  <td><%= link_to student.url, student.url %></td>
+                </tr>
+<% end %>
+              </tbody>
+            </table>
