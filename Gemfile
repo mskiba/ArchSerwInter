@@ -10,8 +10,6 @@ gem 'heroku'
 # polskie znaki
 gem 'string_case_pl'
 
-gem 'sqlite3'
-
 gem 'mongoid'
 
 gem 'therubyracer'
@@ -64,5 +62,12 @@ gem "wirble", :group => :development
 gem "hirb", :group => :development
 gem "therubyracer"
 
-gem 'pg', group: :production
+group :production, :staging do
+	  gem "pg"
+end
+
+group :development, :test do
+	  gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
+end
+
 gem 'thin'
