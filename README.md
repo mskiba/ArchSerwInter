@@ -3,4 +3,5 @@
 
 Repozytrium dla projektu z przedmiotu "Architektura serwisów internetowych". Przedmiot prowadzi [dr Włodzimierz Bzyl](http://wbzyl.inf.ug.edu.pl/rails4/).
 
-Link do heroku: http://arcane-savannah-2521.herokuapp.com/
+# Heroku
+Link do heroku: http://lista-rzeczy-do-zrobienia.herokuapp.com/todos/
