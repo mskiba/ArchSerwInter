@@ -3,7 +3,7 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = Todo.all
+    @todos = Todo.all.sort_by &:deadline
 	
     respond_to do |format|
       format.html # index.html.erb
