@@ -21,7 +21,7 @@
 		<% elsif ile_dni > 5 %>
 			<tr class="warning">
 		<% elsif ile_dni < 0 %>
-			<tr class="info">
+			<tr class="info" style="display:none;">
 		<% end %>
 		
         <td><%= link_to todo.id, todo_path(todo) %></td>
@@ -59,3 +59,6 @@
 <%= link_to new_todo_path, :class => 'btn btn-primary' do %>
 	<i class="icon-plus-sign"></i> <%= t('.new', :default => t("helpers.links.new")) %>
 <% end %>
+    <label class="checkbox" style="display: inline-block;margin-bottom: -6px;margin-left: 10px;">
+      <input class="schowaj" type="checkbox" checked="checked"> Schować stare?
+    </label>

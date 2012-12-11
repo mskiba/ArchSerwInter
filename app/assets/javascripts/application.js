@@ -17,4 +17,14 @@
 //= require jquery-ui-sliderAccess
 //= require jquery-ui-timepicker-addon
 //
-$(document).ready(function() { });
+$(document).ready(function() {
+
+$('.schowaj').click(function() {
+    if( $(this).is(':checked')) {
+        $("tr.info").hide();
+    } else {
+        $("tr.info").show();
+    }
+}); 
+
+});
