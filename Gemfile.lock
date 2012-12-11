@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/ricardochimal/taps.git
+  revision: 93bd2723df7fc14bc7aa9567f4c070c19145e956
+  specs:
+    taps (0.3.24)
+      rack (>= 1.0.1)
+      rest-client (>= 1.4.0, < 1.7.0)
+      sequel (~> 3.20.0)
+      sinatra (~> 1.0.0)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 9061e50deb50cfc5002c2a791ff35101e3bf8348
   specs:
@@ -164,9 +174,12 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    sequel (3.20.0)
     simple_form (2.0.4)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    sinatra (1.0)
+      rack (>= 1.0)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -213,6 +226,7 @@ DEPENDENCIES
   simple_form
   sqlite3-ruby (~> 1.3.0)
   string_case_pl
+  taps!
   therubyracer
   thin
   twitter-bootstrap-rails!

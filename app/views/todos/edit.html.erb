@@ -11,9 +11,12 @@
 			currentText: '<%= t('timepicker.currentText') %>',
 			closeText: '<%= t('timepicker.closeText') %>',
 			
-			dateFormat: 'dd/mm/yy',
+			dateFormat: 'yy-mm-dd',
 			timeFormat: 'HH:mm',
-			defaultValue: '<%= @todo.created_at.strftime('%d/%m/%Y %H:%M') %>'
+			altField: '#osobno_godzina',
+			hour: <%= @todo.deadline.strftime('%H') %>,
+			minute: <%= @todo.deadline.strftime('%M') %>,
+			defaultValue: '<%= @todo.deadline.strftime('%Y-%m-%d') %>'
 		});
 	});
 </script>
