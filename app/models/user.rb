@@ -11,7 +11,7 @@ class User
 		uid == 460870  # mój id na githubie
 	end
 	def student?
-		(uid != nil) && (uid != 460870)
+		(uid == nil) && (uid != 460870)
 	end
 
   def self.from_omniauth(auth)
