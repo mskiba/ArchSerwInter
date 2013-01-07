@@ -17,17 +17,6 @@ GIT
       execjs
       railties (>= 3.1)
 
-GIT
-  remote: git://github.com/thoughtbot/paperclip.git
-  revision: 83d8ec5a318cdf18c632faefd429940e862aec4c
-  specs:
-    paperclip (3.3.0)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.4.0)
-      mime-types
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,7 +51,6 @@ GEM
     arel (3.0.2)
     builder (3.0.3)
     cancan (1.6.8)
-    cocaine (0.4.2)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -219,7 +207,6 @@ DEPENDENCIES
   mongoid
   omniauth
   omniauth-github
-  paperclip!
   pg
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
