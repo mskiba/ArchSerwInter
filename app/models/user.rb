@@ -11,7 +11,7 @@ class User
 		uid == 460870  # mój id na githubie
 	end
 	def student?
-		(uid == nil) && (uid != 460870)
+		(uid != nil) && (uid != 460870)
 	end
 
   def self.from_omniauth(auth)
@@ -23,9 +23,9 @@ class User
       user.provider = auth["provider"]
       user.uid = auth["uid"]
 
-      user.nickname = auth['info']['nickname']
-      user.email = auth['info']['email']
-      user.name = auth['info']['name']
+      user.nickname = auth.info.nickname unless auth.info.nickname.blank?
+      user.email = auth.info.email unless auth.info.email.blank?
+      user.name = auth.info.name unless auth.info.name.blank?
       user.url = auth['info']['urls']['GitHub']
     end
   end
